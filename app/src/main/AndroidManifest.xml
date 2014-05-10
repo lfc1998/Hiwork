@@ -2,10 +2,54 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="hiwork.app" >
 
+    <!-- package 指出了相对路径的基准目录 -->
+
+
+    <!-- 网络相关功能 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" ></application>
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="hiwork.app.com.LoginActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="hiwork.app.com.StudentsActivity"
+            android:label="SA" >
+        </activity>
+        <activity
+            android:name="hiwork.app.com.test_1"
+            android:label="student info" >
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name="hiwork.app.com.SlidingMenuMain" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="hiwork.app.com.test_SlidingMenu"
+            android:label="@string/title_activity_test__sliding_menu" >
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+    </application>
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
 </manifest>

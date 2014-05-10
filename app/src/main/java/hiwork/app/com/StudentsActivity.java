@@ -8,11 +8,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import hiwork.app.org.Student;
+import hiwork.app.entity.Student;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -105,7 +104,7 @@ public class StudentsActivity extends Activity {
 		List<Student> questions = new ArrayList<Student>();
 		URL url = null;
 		try {
-			url = new URL("http://" + ip + ":8080/homeworkServer/servlet/getStudents");
+			url = new URL("http://" + ip + ":8084/StudentService/servlet/getStudents");
 			HttpURLConnection connection = (HttpURLConnection) url
 					.openConnection();
 			connection.setDoInput(true);

@@ -2,17 +2,15 @@ package hiwork.app.com;
 
 import java.io.DataOutputStream;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 import hiwork.app.R;
-import hiwork.app.org.Student;
+import hiwork.app.entity.Student;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -21,7 +19,7 @@ import android.widget.TextView;
 public class LoginActivity extends Activity {
 	TextView userid, password, log_info;
 	Button login_ok;
-	String ip = "192.168.1.102";
+	String ip = "192.168.202.224";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +37,6 @@ public class LoginActivity extends Activity {
 		login_ok.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// if (userid.getText().toString().trim().equals("gduf")
-				// && password.getText().toString().equals("welcome")) {
-				// log_info.setText("登录成功！");
-				// } else {
-				// log_info.setText("登录失败！");
-				// }
 				Student student = login(userid.getText().toString().trim());
 				if (student.getStudentId().equals("fail")) {
 					log_info.setText("无此用户");
@@ -53,14 +45,12 @@ public class LoginActivity extends Activity {
 					log_info.setText("密码错");
 				} else {
 					log_info.setText("登录成功！");
-
 				}
-
 			}
 		});
 	}
 
-	public Student login(String stid) {
+	public Student login(String s_id) {
 		Student result = null;
 		URL url = null;
 		try {
