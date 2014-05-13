@@ -2,11 +2,8 @@ package hiwork.app.com;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-
 import hiwork.app.R;
-
 
 /**
  * Created by Kingsun on 14-5-10.
@@ -38,13 +35,13 @@ public class SlidingMenuMain extends FragmentActivity {
         menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         menu.setShadowWidthRes(R.dimen.shadow_width);
         menu.setShadowDrawable(R.layout.shadow);
-        menu.setBehindWidth(200);//设置SlidingMenu菜单的宽度
-        menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
-        menu.setFadeDegree(0.35f);
+        menu.setBehindWidth(10);//设置SlidingMenu菜单的宽度  貌似没用
+        menu.setBehindOffsetRes(R.dimen.slidingmenuoffset);
+        menu.setFadeDegree(0.4f);
         menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
         // 设置滑动菜单的视图界面
         menu.setMenu(R.layout.menu_frame);
-        getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new SampleListFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new NewListFragment()).commit();
     }
 
     @Override
