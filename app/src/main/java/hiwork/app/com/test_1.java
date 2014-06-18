@@ -27,11 +27,16 @@ public class test_1 extends Activity  {
     private EditText property;
     private Button qsibut;
 
+    static{
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         //解决空指针,无效
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads() .detectDiskWrites().detectNetwork().penaltyLog().build());
+       /* StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads() .detectDiskWrites().detectNetwork().penaltyLog().build());
         StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().penaltyDeath().build());
+*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_1);
 
@@ -44,7 +49,7 @@ public class test_1 extends Activity  {
         qsibut=(Button)findViewById(R.id.qsi_btn);
         qsibut.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 //ID
                 String id = studentId.getText().toString().trim();
                 //methodName
@@ -67,12 +72,12 @@ public class test_1 extends Activity  {
                 soapHelper.setProperty("stuId",id);
                 soapHelper.setSObject();
                 soapHelper.callWebService();
-                String result1 = soapHelper.getResultByIndex(0);
+//                String result1 = soapHelper.getResultByIndex(0);
                 String result2 = soapHelper.getResultByName(propertyName);
-                int result3 = soapHelper.getPropertyCount();
-                String result4=soapHelper.getObject().toString();
+//                int result3 = soapHelper.getPropertyCount();
+//                String result4=soapHelper.getObject().toString();
                 // 查询学生信息
-                resultView.setText(result1 + "\n" + result2);
+                resultView.setText("result2=" + "\n" + result2);
 //                resultView.setText(result1 + "\n" + result2 + "\n" + result3);
             }
         });
@@ -108,7 +113,8 @@ public class test_1 extends Activity  {
         // 调用的方法名称
         String methodName = "getStudentInfo";
         // EndPoint
-        String endPoint = "http://10.0.2.2:8085/StudentService/Default.asmx";
+//        String endPoint = "http://10.0.2.2:8085/StudentService/Default.asmx";
+        String endPoint = "http://godship:8084/StudentService/default.asmx";
         // SOAP Action
         String soapAction = "http://tempuri.org/getStudentInfo";
         // 指定WebService的命名空间和调用的方法名

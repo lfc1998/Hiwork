@@ -16,13 +16,14 @@ import hiwork.app.R;
  */
 public class NewListFragment extends ListFragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.list, null);
+        return inflater.inflate(R.layout.new_list, null);
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         NewAdapter adapter = new NewAdapter(getActivity());
         adapter.add(new NewItem("扫一扫"));
+        adapter.add(new NewItem("待录入"));
         adapter.add(new NewItem("已录入"));
         setListAdapter(adapter);
     }

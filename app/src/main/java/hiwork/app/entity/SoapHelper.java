@@ -17,7 +17,7 @@ public class SoapHelper {
     // 调用的方法名称
     String methodName;
     // EndPoint
-    String endPoint = "http://10.0.2.2:8085/StudentService/Default.asmx";
+    String endPoint = "http://godship:8084/StudentService/default.asmx";
     // SOAP Action
     String soapAction;//= "http://tempuri.org/" + methodName;
     // 指定WebService的命名空间和调用的方法名

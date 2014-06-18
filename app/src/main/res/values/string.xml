@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Hackwork</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_students">StudentsActivity</string>
+    <string name="title_activity_photo_upload">PhotoUpload</string>
+    <string name="title_activity_test__sliding_menu">test_SlidingMenu</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

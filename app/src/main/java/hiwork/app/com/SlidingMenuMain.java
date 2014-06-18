@@ -16,7 +16,7 @@ public class SlidingMenuMain extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         //设置标题
-        setTitle("Attach");
+        setTitle("QrBike");
 
         //初始化滑动菜单
         initSlidingMenu();
@@ -42,6 +42,7 @@ public class SlidingMenuMain extends FragmentActivity {
         // 设置滑动菜单的视图界面
         menu.setMenu(R.layout.menu_frame);
         getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new NewListFragment()).commit();
+
     }
 
     @Override

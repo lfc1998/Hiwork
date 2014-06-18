@@ -1,0 +1,39 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="hiwork.app.com.HomeMenu">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:id="@+id/scan_qr"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="扫一扫"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/local_record"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="待上传"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/online_record"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="已录入"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+
+</FrameLayout>
